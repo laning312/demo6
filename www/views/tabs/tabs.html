@@ -1,0 +1,20 @@
+<!--ion-tabs不能在ionContent中使用，会导致css冲突。-->
+<ion-tabs class="tabs-positive tabs-icon-top">
+  <ion-tab title="首页" icon-on="ion-ios-home" icon-off="ion-ios-home-outline" ui-sref="tabs.home">
+    <!--选项卡需要使用额外的ionNavView组件来加载你的组件。首先需要向选项卡中添加ionNavView组件，
+    需要分别为这些组件设置一个名字, 从而可以引用它们。 在Ionic应用中，只能有一个未命名的ionNavView,
+    并且它一定是默认视图。每个选项卡还会有一个ui-sref属性，用来把选项卡图标转换成按钮，从而可以在选项卡之间切换.
+    为每个标签设置独立的视图。
+    每个选项卡有自己的ionNavView，选项卡容器是它的父视图，因为每个选项卡有自己独特的ionNaview,它会保存自己的导航历史-->
+    <ion-nav-view name="home-tab"></ion-nav-view>
+  </ion-tab>
+  <ion-tab title="直播" icon-on="ion-social-youtube" icon-off="ion-social-youtube-outline" ui-sref="tabs.video">
+    <ion-nav-view name="video-tab"></ion-nav-view>
+  </ion-tab>
+  <ion-tab title="话题" icon-on="ion-ios-chatbubble" icon-off="ion-ios-chatbubble-outline" ui-sref="tabs.topic">
+    <ion-nav-view name="topic-tab"></ion-nav-view>
+  </ion-tab>
+  <ion-tab title="我" icon-on="ion-ios-person" icon-off="ion-ios-person-outline" ui-sref="tabs.my">
+    <ion-nav-view name="my-tab"></ion-nav-view>
+  </ion-tab>
+</ion-tabs>
